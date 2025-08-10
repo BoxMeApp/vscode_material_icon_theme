@@ -39,6 +39,7 @@ function toFlutterEnum(iconDefinitions: {
     path: string;
 }[]) {
     return `
+// dart format off
 // ignore_for_file: constant_identifier_names
 
 import 'package:vector_graphics/vector_graphics.dart';

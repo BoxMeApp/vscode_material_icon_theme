@@ -7,7 +7,12 @@ AssetBytesLoader fileToIcon(String name) {
   return fileNames[name] ?? fileExtensions[extension] ?? file;
 }
 
+/// `/` as root folder
 AssetBytesLoader directoryToIcon(String name, bool isExpanded) {
+  if (name == '/') {
+    return isExpanded ? rootFolderExpanded : rootFolder;
+  }
+
   if (isExpanded) {
     return folderNamesExpanded[name] ?? folderExpanded;
   }
