@@ -1,9 +1,10 @@
 import { generateManifest, availableIconPacks } from "material-icon-theme";
 import { basename, join } from 'path';
 
-import { UpdateAssetsVec } from "./assets.js";
+import { updateAssetsVec } from "./assets.js";
 import { generateFlutterEnum } from "./definitions.js";
 import { generateFlutterRules } from "./rules.js";
+import { generateFlutterExample } from "./example.js";
 
 const manifest = generateManifest();
 // console.log(manifest);
@@ -28,7 +29,7 @@ const flutterWorkspacePath = join(currentDir, '..');
 const flutterAssetsIconPaths = join(flutterWorkspacePath, 'assets', 'icons');
 console.log(`flutterAssetsIconPaths: ${flutterAssetsIconPaths}`);
 const flutterAssetsVecLogPath = join(currentDir, 'logs');
-UpdateAssetsVec(iconDir, flutterAssetsIconPaths, flutterAssetsVecLogPath, flutterWorkspacePath);
+updateAssetsVec(iconDir, flutterAssetsIconPaths, flutterAssetsVecLogPath, flutterWorkspacePath);
 
 const generateDefinitionPath = join(currentDir, '..', 'lib', 'icon.g.dart');
 
@@ -57,6 +58,11 @@ console.log(`rootFolder: ${manifest.rootFolder}`);
 // highContrast?: Manifest;
 // hidesExplorerArrows?: boolean;
 
-const flutterRulesPath = join(currentDir, '..', 'lib', 'rules.g.dart');
+const flutterRulesPath = join(flutterWorkspacePath, 'lib', 'rules.g.dart');
 
 generateFlutterRules(flutterRulesPath, manifest, 'icon.g.dart');
+
+const flutterExamplePath = join(flutterWorkspacePath, 'example',
+  'lib', 'all.g.dart');
+
+generateFlutterExample(Object.keys(manifest.iconDefinitions!), flutterExamplePath);

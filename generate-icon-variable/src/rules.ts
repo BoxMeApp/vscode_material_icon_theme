@@ -5,20 +5,6 @@ import { writeFileSync } from "fs";
 
 
 function toFlutterRules(manifest: Manifest, importPath: string) {
-  const rules: string[] = [];
-
-  if (manifest.folderNames) {
-    for (const [folder, name] of Object.entries(manifest.folderNames)) {
-      rules.push(`"${folder}": "${toFlutterEnumValue(name)}",`);
-    }
-  }
-
-  if (manifest.fileExtensions) {
-    for (const [ext, name] of Object.entries(manifest.fileExtensions)) {
-      rules.push(`"${ext}": "${toFlutterEnumValue(name)}",`);
-    }
-  }
-
   return `
 import '${importPath}';
 // dart format off

@@ -2,7 +2,7 @@ import { copyFileSync, existsSync, mkdirSync, rmSync } from 'fs';
 import { basename, join } from 'path';
 import { execSync } from 'child_process';
 
-function CopyAssets(assetsPaths: string[], destPath: string) {
+function copyAssets(assetsPaths: string[], destPath: string) {
   if (!existsSync(destPath)) {
     mkdirSync(destPath, { recursive: true });
   }
@@ -13,16 +13,16 @@ function CopyAssets(assetsPaths: string[], destPath: string) {
   });
 }
 
-function ClearAssets(destPath: string) {
+function clearAssets(destPath: string) {
   if (existsSync(destPath)) {
     rmSync(destPath, { recursive: true, force: true });
   }
 }
 
 
-export function UpdateAssets(assetsPaths: string[], destPath: string) {
-  ClearAssets(destPath);
-  CopyAssets(assetsPaths, destPath);
+export function updateAssets(assetsPaths: string[], destPath: string) {
+  clearAssets(destPath);
+  copyAssets(assetsPaths, destPath);
 }
 
 function reportAssetAboutVec(inputDir: string, outputDir: string, workspacePath: string) {
@@ -58,8 +58,8 @@ function generateAssetVec(inputDir: string, outputDir: string, workspacePath: st
   }
 }
 
-export function UpdateAssetsVec(assetsDir: string, destPath: string, logPath: string, workspacePath: string) {
-  ClearAssets(destPath);
+export function updateAssetsVec(assetsDir: string, destPath: string, logPath: string, workspacePath: string) {
+  clearAssets(destPath);
 
   reportAssetAboutVec(assetsDir, logPath, workspacePath);
   generateAssetVec(assetsDir, destPath, workspacePath);
