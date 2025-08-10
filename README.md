@@ -48,4 +48,6 @@ npm install
 npm run dev
 ```
 
-rule: if name.startwith(/\d/) then prefix("file_") else name
+rule: if name.startwith(/\d/) then prefix("num_") else name
+    3d -> num_3d
+

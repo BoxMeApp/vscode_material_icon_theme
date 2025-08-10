@@ -1,12 +1,13 @@
-import 'rules.g.dart';
-import 'icon.g.dart';
+import 'package:vector_graphics/vector_graphics.dart';
 
-VSCodeIcon fileToIcon(String name) {
+import 'rules.g.dart';
+
+AssetBytesLoader fileToIcon(String name) {
   final extension = _findExtension(name);
   return fileNames[name] ?? fileExtensions[extension] ?? file;
 }
 
-VSCodeIcon directoryToIcon(String name, bool isExpanded) {
+AssetBytesLoader directoryToIcon(String name, bool isExpanded) {
   if (isExpanded) {
     return folderNamesExpanded[name] ?? folderExpanded;
   }
