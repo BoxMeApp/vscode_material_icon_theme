@@ -11,8 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/to/develop-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+port [vscode-material-icon-theme](https://github.com/material-extensions/vscode-material-icon-theme) to flutter
 
 ## Features
 
@@ -40,8 +39,12 @@ from the package authors, and more.
 
 ## development
 
+deps [material-icon-theme](https://www.npmjs.com/package/material-icon-theme)
+
+
 ```bash
 cd generate-icon-variable
+npm install
 npm run dev
 ```
 
