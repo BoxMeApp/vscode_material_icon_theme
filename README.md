@@ -51,3 +51,8 @@ npm run dev
 rule: if name.startwith(/\d/) then prefix("num_") else name
     3d -> num_3d
 
+compile svg to vec
+
+```bash
+dart pub global activate vector_graphics_compiler
+```

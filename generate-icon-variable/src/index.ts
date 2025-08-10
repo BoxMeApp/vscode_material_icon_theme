@@ -1,7 +1,7 @@
 import { generateManifest, availableIconPacks } from "material-icon-theme";
 import { basename, join } from 'path';
 
-import { UpdateAssets } from "./assets.js";
+import { UpdateAssetsVec } from "./assets.js";
 import { generateFlutterEnum } from "./definitions.js";
 import { generateFlutterRules } from "./rules.js";
 
@@ -13,7 +13,8 @@ const manifest = generateManifest();
 
 const currentDir = process.cwd();
 console.log(`currentDir: ${currentDir}`);
-const iconDistDir = `${currentDir}/node_modules/material-icon-theme/dist`;
+const iconDistDir = join(currentDir, 'node_modules', 'material-icon-theme', 'dist');
+const iconDir = join(currentDir, 'node_modules', 'material-icon-theme', 'icons');
 console.log(`iconDistDir: ${iconDistDir}`);
 
 function toRealIconPath(iconPath: string) {
@@ -23,11 +24,11 @@ function toRealIconPath(iconPath: string) {
 const iconRealPaths = Object.values(manifest.iconDefinitions ?? {}).map((icon) => toRealIconPath(icon.iconPath));
 
 // console.log(iconRealPaths);
-
-const flutterAssetsIconPaths = join(currentDir, '..', 'assets', 'icons');
+const flutterWorkspacePath = join(currentDir, '..');
+const flutterAssetsIconPaths = join(flutterWorkspacePath, 'assets', 'icons');
 console.log(`flutterAssetsIconPaths: ${flutterAssetsIconPaths}`);
-
-UpdateAssets(iconRealPaths, flutterAssetsIconPaths);
+const flutterAssetsVecLogPath = join(currentDir, 'logs');
+UpdateAssetsVec(iconDir, flutterAssetsIconPaths, flutterAssetsVecLogPath, flutterWorkspacePath);
 
 const generateDefinitionPath = join(currentDir, '..', 'lib', 'icon.g.dart');
 
