@@ -1,6 +1,6 @@
 // ignore_for_file: constant_identifier_names
 
-enum VsCodeIcon {
+enum VSCodeIcon {
   git("git.svg"),
   github_actions_workflow("github-actions-workflow.svg"),
   yaml("yaml.svg"),
@@ -1130,9 +1130,9 @@ enum VsCodeIcon {
   folder_root_open("folder-root-open.svg"),;
   
   final String fileName;
-  const VsCodeIcon(this.fileName);
+  const VSCodeIcon(this.fileName);
 
-  static VsCodeIcon fromFileName(String fileName) {
-    return VsCodeIcon.values.firstWhere((icon) => icon.fileName == fileName);
+  static VSCodeIcon fromFileName(String fileName) {
+    return VSCodeIcon.values.firstWhere((icon) => icon.fileName == fileName);
   }
 }

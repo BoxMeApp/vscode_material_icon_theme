@@ -1,12 +1,12 @@
-import 'package:flutter_test/flutter_test.dart';
+// import 'package:flutter_test/flutter_test.dart';
 
-import 'package:vscode_material_icon_theme/vscode_material_icon_theme.dart';
+// import 'package:vscode_material_icon_theme/vscode_material_icon_theme.dart';
 
-void main() {
-  test('adds one to input values', () {
-    final calculator = Calculator();
-    expect(calculator.addOne(2), 3);
-    expect(calculator.addOne(-7), -6);
-    expect(calculator.addOne(0), 1);
-  });
-}
+// void main() {
+//   test('adds one to input values', () {
+//     final calculator = Calculator();
+//     expect(calculator.addOne(2), 3);
+//     expect(calculator.addOne(-7), -6);
+//     expect(calculator.addOne(0), 1);
+//   });
+// }
