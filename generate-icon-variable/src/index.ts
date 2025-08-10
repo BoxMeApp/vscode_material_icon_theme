@@ -2,6 +2,7 @@ import { generateManifest, availableIconPacks } from "material-icon-theme";
 import { basename, join } from 'path';
 
 import { UpdateAssets } from "./assets.js";
+import { generateFlutterEnum } from "./definition.js";
 
 const manifest = generateManifest();
 // console.log(manifest);
@@ -25,3 +26,7 @@ const flutterAssetsIconPaths = join(currentDir, '..', 'assets', 'icons');
 console.log(`flutterAssetsIconPaths: ${flutterAssetsIconPaths}`);
 
 UpdateAssets(iconRealPaths, flutterAssetsIconPaths);
+
+const generateDefinitionPath = join(currentDir, '..', 'lib', 'vscode_icon.g.dart');
+
+generateFlutterEnum(generateDefinitionPath, manifest.iconDefinitions!);
