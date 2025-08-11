@@ -9,7 +9,7 @@ A Flutter package that ports the popular [vscode-material-icon-theme](https://gi
 - Easy integration with Flutter projects.
 - Customizable icon mapping.
 
-![Showcase](docs/screen.png)
+![Showcase](images/screen.png)
 
 ## Getting Started
 
