@@ -49,3 +49,7 @@ unset PUB_HOSTED_URL
 dart pub publish --dry-run
 dart pub publish
 ```
+
+## TODO
+
+- [ ] export vscode languageIds and pattern(write a plugin to do that)
