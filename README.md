@@ -42,3 +42,10 @@ npm install
 npm run dev
 ```
 
+### publish
+
+```bash
+unset PUB_HOSTED_URL
+dart pub publish --dry-run
+dart pub publish
+```
