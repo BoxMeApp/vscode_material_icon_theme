@@ -21,7 +21,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 final widget = SvgPicture(MaterialIcons.git);
 
 final fileIcon = SvgPicture(fileToIcon('main.dart'));
-final directoryIcon = SvgPicture(directoryToIcon('lib'));
+final directoryIcon = SvgPicture(directoryToIcon('lib', isExpanded: true));
 ```
 
 ## Icon Naming Rule

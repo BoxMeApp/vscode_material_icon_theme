@@ -8,7 +8,7 @@ AssetBytesLoader fileToIcon(String name) {
 }
 
 /// `/` as root folder
-AssetBytesLoader directoryToIcon(String name, bool isExpanded) {
+AssetBytesLoader directoryToIcon(String name, {bool isExpanded = false}) {
   if (name == '/') {
     return isExpanded ? rootFolderExpanded : rootFolder;
   }
