@@ -7,6 +7,10 @@ void main() {
     expect(fileToIcon('main.dart'), MaterialIcons.dart);
 
     expect(fileToIcon('index.test.js'), MaterialIcons.test_js);
+
+    expect(fileToIcon('what.xxx'), MaterialIcons.file);
+
+    expect(fileToIcon('index.js'), MaterialIcons.javascript);
   });
 
   test('directory', () {

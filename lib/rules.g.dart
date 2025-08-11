@@ -1,5 +1,6 @@
 import 'icon.g.dart';
 import 'language_id.g.dart';
+
 // dart format off
 const file = MaterialIcons.file;
 const folder = MaterialIcons.folder;
