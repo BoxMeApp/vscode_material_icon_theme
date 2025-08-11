@@ -20,8 +20,7 @@ AssetBytesLoader directoryToIcon(String name, {bool isExpanded = false}) {
 }
 
 String _findExtension(String name) {
-  return allExtensions.firstWhere(
-    (ext) => name.endsWith(ext),
-    orElse: () => '',
-  );
+  return allExtensions
+      .where(name.endsWith)
+      .fold('', (best, ext) => ext.length > best.length ? ext : best);
 }

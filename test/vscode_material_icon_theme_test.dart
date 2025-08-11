@@ -5,6 +5,8 @@ import 'package:vscode_material_icon_theme/vscode_material_icon_theme.dart';
 void main() {
   test('file', () {
     expect(fileToIcon('main.dart'), MaterialIcons.dart);
+
+    expect(fileToIcon('index.test.js'), MaterialIcons.test_js);
   });
 
   test('directory', () {

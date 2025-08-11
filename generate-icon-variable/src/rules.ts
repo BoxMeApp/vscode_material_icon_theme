@@ -26,10 +26,10 @@ ${toFlutterMap(manifest.folderNamesExpanded!)}
 const rootFolder = ${toFlutterEnumValue(manifest.rootFolder!)};
 const rootFolderExpanded = ${toFlutterEnumValue(manifest.rootFolderExpanded!)};
 const fileExtensions = {
-${toFlutterMap(manifest.fileExtensions!)}
+${toFlutterMap(Object.fromEntries(Object.entries(manifest.fileExtensions!).map(([key, value]) => [toFlutterFileExtension(key), value])))}
 };
 const allExtensions = [
-${toFlutterList(Object.keys(manifest.fileExtensions!))}
+${toFlutterList(Object.keys(manifest.fileExtensions!).map(toFlutterFileExtension))}
 ];
 const fileNames = {
 ${toFlutterMap(manifest.fileNames!)}
@@ -51,7 +51,11 @@ function toFlutterList(list: string[]) {
   return list.map(item => `  "${item}",`).join("\n");
 }
 
+function toFlutterFileExtension(extension: string) {
+  return `.${extension}`;
+}
+
 export function generateFlutterRules(path: string, manifest: Manifest, importPath: string) {
-    const content = toFlutterRules(manifest, importPath);
-    writeFileSync(path, content.trim(), { flag: 'w' });
+  const content = toFlutterRules(manifest, importPath);
+  writeFileSync(path, content.trim(), { flag: 'w' });
 }
