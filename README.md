@@ -1,58 +1,44 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+# vscode_material_icon_theme
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
-
-port [vscode-material-icon-theme](https://github.com/material-extensions/vscode-material-icon-theme) to flutter
+A Flutter package that ports the popular [vscode-material-icon-theme](https://github.com/material-extensions/vscode-material-icon-theme) to Flutter. This package provides a comprehensive set of material-style icons for use in Flutter apps, inspired by the VS Code extension.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Hundreds of material-style icons for files and folders.
+- Easy integration with Flutter projects.
+- Customizable icon mapping.
 
-## Getting started
+![Showcase](docs/screen.png)
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+## Getting Started
 
 ```dart
-const like = 'sample';
+import 'package:vscode_material_icon_theme/vscode_material_icon_theme.dart';
+
+import 'package:flutter_svg/flutter_svg.dart';
+
+final widget = SvgPicture(MaterialIcons.git);
+
+final fileIcon = SvgPicture(fileToIcon('main.dart'));
+final directoryIcon = SvgPicture(directoryToIcon('lib'));
 ```
 
-## Additional information
+## Icon Naming Rule
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+If the icon name starts with a digit, it is prefixed with `num_` (e.g., `3d` becomes `num_3d`).
 
-## development
+## Development
 
-deps [material-icon-theme](https://www.npmjs.com/package/material-icon-theme)
+- Depends on [material-icon-theme](https://www.npmjs.com/package/material-icon-theme) for icon assets.
+- SVGs are compiled to `.vec` format for efficient use in Flutter.
 
+### Useful Commands
 
 ```bash
+flutter pub get
 cd generate-icon-variable
 npm install
 npm run dev
 ```
 
-rule: if name.startwith(/\d/) then prefix("num_") else name
-    3d -> num_3d
-
-compile svg to vec
-
-```bash
-dart pub global activate vector_graphics_compiler
-```
