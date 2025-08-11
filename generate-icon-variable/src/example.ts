@@ -1,4 +1,4 @@
-import { toFlutterEnumValue } from "./definitions.js";
+import { toFlutterEnumValue } from "./icon.js";
 import { writeFileSync } from "fs";
 
 function toFlutterExample(iconIds: string[]) {

@@ -1,4 +1,4 @@
-import { toFlutterEnumValue } from "./definitions.js";
+import { toFlutterEnumValue } from "./icon.js";
 
 import { type Manifest } from "material-icon-theme";
 import { writeFileSync } from "fs";

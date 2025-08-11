@@ -2,7 +2,7 @@ import { generateManifest, availableIconPacks } from "material-icon-theme";
 import { basename, join } from 'path';
 
 import { updateAssetsVec } from "./assets.js";
-import { generateFlutterEnum } from "./definitions.js";
+import { generateFlutterEnum } from "./icon.js";
 import { generateFlutterRules } from "./rules.js";
 import { generateFlutterExample } from "./example.js";
 
