@@ -1,7 +1,7 @@
 name: vscode_material_icon_theme
 description: "A new Flutter package project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/BoxMeApp/vscode_material_icon_theme
 
 environment:
   sdk: ^3.8.1
