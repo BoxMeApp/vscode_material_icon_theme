@@ -1,6 +1,6 @@
 name: vscode_material_icon_theme
 description: "A Flutter package that ports the popular vscode-material-icon-theme to Flutter"
-version: 0.0.2
+version: 0.1.0
 homepage: https://github.com/BoxMeApp/vscode_material_icon_theme
 
 environment:

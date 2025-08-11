@@ -4,4 +4,8 @@
 
 ## 0.0.2
 
-* fix find extsion(greedy)
+* fix find extension (greedy)
+
+## 0.1.0
+
+* support default file ID recognition (eg. *.js -> javascript)

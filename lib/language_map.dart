@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'language_id.g.dart';
 
 /// Maps exact filenames (without extension) to VSCode Language IDs
