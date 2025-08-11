@@ -1,16 +1,18 @@
-import { toFlutterEnumValue } from "./icon.js";
+import { toFlutterMaterialIconsValue } from "./icon.js";
 
 import { type Manifest } from "material-icon-theme";
 import { writeFileSync } from "fs";
+import { toFlutterVSCodeLanguageIdValue } from "./language_id.js";
 
 
-function toFlutterRules(manifest: Manifest, importPath: string) {
+function toFlutterRules(manifest: Manifest, iconLib: string, languageIdLib: string) {
   return `
-import '${importPath}';
+import '${iconLib}';
+import '${languageIdLib}';
 // dart format off
-const file = ${toFlutterEnumValue(manifest.file!)};
-const folder = ${toFlutterEnumValue(manifest.folder!)};
-const folderExpanded = ${toFlutterEnumValue(manifest.folderExpanded!)};
+const file = ${toFlutterMaterialIconsValue(manifest.file!)};
+const folder = ${toFlutterMaterialIconsValue(manifest.folder!)};
+const folderExpanded = ${toFlutterMaterialIconsValue(manifest.folderExpanded!)};
 const folderNames = {
 ${toFlutterMap(manifest.folderNames!)}
 };
@@ -23,8 +25,8 @@ ${toFlutterMap(manifest.folderNamesExpanded!)}
 // const rootFolderNamesExpanded = {
 // ${toFlutterMap(manifest.rootFolderNamesExpanded!)}
 // };
-const rootFolder = ${toFlutterEnumValue(manifest.rootFolder!)};
-const rootFolderExpanded = ${toFlutterEnumValue(manifest.rootFolderExpanded!)};
+const rootFolder = ${toFlutterMaterialIconsValue(manifest.rootFolder!)};
+const rootFolderExpanded = ${toFlutterMaterialIconsValue(manifest.rootFolderExpanded!)};
 const fileExtensions = {
 ${toFlutterMap(Object.fromEntries(Object.entries(manifest.fileExtensions!).map(([key, value]) => [toFlutterFileExtension(key), value])))}
 };
@@ -35,7 +37,7 @@ const fileNames = {
 ${toFlutterMap(manifest.fileNames!)}
 };
 const languageIds = {
-${toFlutterMap(manifest.languageIds!)}
+${toFlutterLanguageIdsMap(manifest.languageIds!)}
 };
 // dart format on
 `;
@@ -43,7 +45,13 @@ ${toFlutterMap(manifest.languageIds!)}
 
 function toFlutterMap(map: Record<string, string>) {
   return Object.entries(map)
-    .map(([key, value]) => `  "${key}": ${toFlutterEnumValue(value)},`)
+    .map(([key, value]) => `  "${key}": ${toFlutterMaterialIconsValue(value)},`)
+    .join("\n");
+}
+
+function toFlutterLanguageIdsMap(map: Record<string, string>) {
+  return Object.entries(map)
+    .map(([key, value]) => `  ${toFlutterVSCodeLanguageIdValue(key)}: ${toFlutterMaterialIconsValue(value)},`)
     .join("\n");
 }
 
@@ -55,7 +63,7 @@ function toFlutterFileExtension(extension: string) {
   return `.${extension}`;
 }
 
-export function generateFlutterRules(path: string, manifest: Manifest, importPath: string) {
-  const content = toFlutterRules(manifest, importPath);
+export function generateFlutterRules(path: string, manifest: Manifest, iconLib: string, languageIdLib: string) {
+  const content = toFlutterRules(manifest, iconLib, languageIdLib);
   writeFileSync(path, content.trim(), { flag: 'w' });
 }

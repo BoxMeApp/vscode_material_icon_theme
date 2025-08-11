@@ -2,9 +2,10 @@ import { generateManifest, availableIconPacks } from "material-icon-theme";
 import { basename, join } from 'path';
 
 import { updateAssetsVec } from "./assets.js";
-import { generateFlutterEnum } from "./icon.js";
+import { generateFlutterMaterialIcons } from "./icon.js";
 import { generateFlutterRules } from "./rules.js";
 import { generateFlutterExample } from "./example.js";
+import { generateFlutterLanguageId } from "./language_id.js";
 
 const manifest = generateManifest();
 // console.log(manifest);
@@ -31,9 +32,13 @@ console.log(`flutterAssetsIconPaths: ${flutterAssetsIconPaths}`);
 const flutterAssetsVecLogPath = join(currentDir, 'logs');
 updateAssetsVec(iconDir, flutterAssetsIconPaths, flutterAssetsVecLogPath, flutterWorkspacePath);
 
-const generateDefinitionPath = join(currentDir, '..', 'lib', 'icon.g.dart');
+const generateDefinitionPath = join(flutterWorkspacePath, 'lib', 'icon.g.dart');
 
-generateFlutterEnum(generateDefinitionPath, manifest.iconDefinitions!);
+generateFlutterMaterialIcons(generateDefinitionPath, manifest.iconDefinitions!);
+
+const generateLanguageIdPath = join(flutterWorkspacePath, 'lib', 'language_id.g.dart');
+
+generateFlutterLanguageId(generateLanguageIdPath, Object.keys(manifest.languageIds!));
 
 // file?: string;
 console.log(`file: ${manifest.file}`);
@@ -60,7 +65,7 @@ console.log(`rootFolder: ${manifest.rootFolder}`);
 
 const flutterRulesPath = join(flutterWorkspacePath, 'lib', 'rules.g.dart');
 
-generateFlutterRules(flutterRulesPath, manifest, 'icon.g.dart');
+generateFlutterRules(flutterRulesPath, manifest, 'icon.g.dart', 'language_id.g.dart');
 
 const flutterExamplePath = join(flutterWorkspacePath, 'example',
   'lib', 'all.g.dart');

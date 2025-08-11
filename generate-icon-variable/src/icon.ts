@@ -1,14 +1,14 @@
 import { basename } from 'path';
 import { writeFileSync } from 'fs';
 
-function toFlutterEnumName(iconId: string) {
+function toFlutterVariableName(iconId: string) {
     const name = iconId.replace(/-/g, '_');
     // if the name starts with a digit, prefix it with "num_"
     return /^\d/.test(name) ? `num_${name}` : name;
 }
 
-export function toFlutterEnumValue(iconId: string) {
-    return `MaterialIcons.${toFlutterEnumName(iconId)}`;
+export function toFlutterMaterialIconsValue(iconId: string) {
+    return `MaterialIcons.${toFlutterVariableName(iconId)}`;
 }
 
 
@@ -20,21 +20,14 @@ function toIconDefinitions(iconDefinitions: Record<string, {
     );
 }
 
-function toFlutterEnumItem({ id, path }: {
+function toFlutterMaterialIconsItem({ id, path }: {
     id: string;
     path: string;
 }) {
-    return `${toFlutterEnumName(id)}("${path}"),`;
+    return `static const ${toFlutterVariableName(id)} = AssetBytesLoader("assets/icons/${path}.vec", packageName: _packageName);`;
 }
 
-function toFlutterIconItem({ id, path }: {
-    id: string;
-    path: string;
-}) {
-    return `static const ${toFlutterEnumName(id)} = AssetBytesLoader("assets/icons/${path}.vec", packageName: _packageName);`;
-}
-
-function toFlutterEnum(iconDefinitions: {
+function toFlutterMaterialIcons(iconDefinitions: {
     id: string;
     path: string;
 }[]) {
@@ -47,28 +40,17 @@ import 'package:vector_graphics/vector_graphics.dart';
 const _packageName = "vscode_material_icon_theme";
 
 abstract final class MaterialIcons {
-  ${iconDefinitions.map(toFlutterIconItem).join('\n  ')}
+  ${iconDefinitions.map(toFlutterMaterialIconsItem).join('\n  ')}
 }
-
-// enum VSCodeIcon {
-//   ${iconDefinitions.map(toFlutterEnumItem).join('\n//  ')};
-  
-//   final String fileName;
-//   const VSCodeIcon(this.fileName);
-
-//   static VSCodeIcon fromFileName(String fileName) {
-//     return VSCodeIcon.values.firstWhere((icon) => icon.fileName == fileName);
-//   }
-// }
 `;
 
 }
 
-export function generateFlutterEnum(path: string, iconDefinitions: Record<string, {
+export function generateFlutterMaterialIcons(path: string, iconDefinitions: Record<string, {
     iconPath: string;
 }>) {
     const definitions = toIconDefinitions(iconDefinitions);
-    const enumContent = toFlutterEnum(definitions);
+    const enumContent = toFlutterMaterialIcons(definitions);
 
     writeFileSync(path, enumContent.trim(), { flag: 'w' });
 }
