@@ -31,7 +31,7 @@ If the icon name starts with a digit, it is prefixed with `num_` (e.g., `3d` bec
 ## Development
 
 - Depends on [material-icon-theme](https://www.npmjs.com/package/material-icon-theme) for icon assets.
-- SVGs are compiled to `.vec` format for efficient use in Flutter.
+- SVGs are [compiled](https://pub.dev/packages/vector_graphics_compiler) to `.vec` format for efficient use in Flutter.
 
 ### Useful Commands
 
