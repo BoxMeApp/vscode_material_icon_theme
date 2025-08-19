@@ -164,6 +164,7 @@ abstract final class MaterialIcons {
   static const blink_light = AssetBytesLoader("assets/icons/blink_light.svg.vec", packageName: _packageName);
   static const just = AssetBytesLoader("assets/icons/just.svg.vec", packageName: _packageName);
   static const jinja_light = AssetBytesLoader("assets/icons/jinja_light.svg.vec", packageName: _packageName);
+  static const prompt = AssetBytesLoader("assets/icons/prompt.svg.vec", packageName: _packageName);
   static const playwright = AssetBytesLoader("assets/icons/playwright.svg.vec", packageName: _packageName);
   static const sublime = AssetBytesLoader("assets/icons/sublime.svg.vec", packageName: _packageName);
   static const simulink = AssetBytesLoader("assets/icons/simulink.svg.vec", packageName: _packageName);
@@ -181,6 +182,7 @@ abstract final class MaterialIcons {
   static const astro = AssetBytesLoader("assets/icons/astro.svg.vec", packageName: _packageName);
   static const astro_config = AssetBytesLoader("assets/icons/astro-config.svg.vec", packageName: _packageName);
   static const vscode = AssetBytesLoader("assets/icons/vscode.svg.vec", packageName: _packageName);
+  static const varnish = AssetBytesLoader("assets/icons/varnish.svg.vec", packageName: _packageName);
   static const qsharp = AssetBytesLoader("assets/icons/qsharp.svg.vec", packageName: _packageName);
   static const zip = AssetBytesLoader("assets/icons/zip.svg.vec", packageName: _packageName);
   static const vala = AssetBytesLoader("assets/icons/vala.svg.vec", packageName: _packageName);
@@ -604,6 +606,7 @@ abstract final class MaterialIcons {
   static const pre_commit = AssetBytesLoader("assets/icons/pre-commit.svg.vec", packageName: _packageName);
   static const controller = AssetBytesLoader("assets/icons/controller.svg.vec", packageName: _packageName);
   static const dependencies_update = AssetBytesLoader("assets/icons/dependencies-update.svg.vec", packageName: _packageName);
+  static const lintstaged = AssetBytesLoader("assets/icons/lintstaged.svg.vec", packageName: _packageName);
   static const histoire = AssetBytesLoader("assets/icons/histoire.svg.vec", packageName: _packageName);
   static const installation = AssetBytesLoader("assets/icons/installation.svg.vec", packageName: _packageName);
   static const github_sponsors = AssetBytesLoader("assets/icons/github-sponsors.svg.vec", packageName: _packageName);
@@ -626,6 +629,8 @@ abstract final class MaterialIcons {
   static const blender = AssetBytesLoader("assets/icons/blender.svg.vec", packageName: _packageName);
   static const tsdoc = AssetBytesLoader("assets/icons/tsdoc.svg.vec", packageName: _packageName);
   static const oxlint = AssetBytesLoader("assets/icons/oxlint.svg.vec", packageName: _packageName);
+  static const vanilla_extract = AssetBytesLoader("assets/icons/vanilla-extract.svg.vec", packageName: _packageName);
+  static const claude = AssetBytesLoader("assets/icons/claude.svg.vec", packageName: _packageName);
   static const file = AssetBytesLoader("assets/icons/file.svg.vec", packageName: _packageName);
   static const folder_rust = AssetBytesLoader("assets/icons/folder-rust.svg.vec", packageName: _packageName);
   static const folder_rust_open = AssetBytesLoader("assets/icons/folder-rust-open.svg.vec", packageName: _packageName);
@@ -961,6 +966,8 @@ abstract final class MaterialIcons {
   static const folder_prisma_open = AssetBytesLoader("assets/icons/folder-prisma-open.svg.vec", packageName: _packageName);
   static const folder_pipe = AssetBytesLoader("assets/icons/folder-pipe.svg.vec", packageName: _packageName);
   static const folder_pipe_open = AssetBytesLoader("assets/icons/folder-pipe-open.svg.vec", packageName: _packageName);
+  static const folder_interceptor = AssetBytesLoader("assets/icons/folder-interceptor.svg.vec", packageName: _packageName);
+  static const folder_interceptor_open = AssetBytesLoader("assets/icons/folder-interceptor-open.svg.vec", packageName: _packageName);
   static const folder_svg = AssetBytesLoader("assets/icons/folder-svg.svg.vec", packageName: _packageName);
   static const folder_svg_open = AssetBytesLoader("assets/icons/folder-svg-open.svg.vec", packageName: _packageName);
   static const folder_vuex_store = AssetBytesLoader("assets/icons/folder-vuex-store.svg.vec", packageName: _packageName);
@@ -1021,6 +1028,8 @@ abstract final class MaterialIcons {
   static const folder_home_open = AssetBytesLoader("assets/icons/folder-home-open.svg.vec", packageName: _packageName);
   static const folder_project = AssetBytesLoader("assets/icons/folder-project.svg.vec", packageName: _packageName);
   static const folder_project_open = AssetBytesLoader("assets/icons/folder-project-open.svg.vec", packageName: _packageName);
+  static const folder_prompts = AssetBytesLoader("assets/icons/folder-prompts.svg.vec", packageName: _packageName);
+  static const folder_prompts_open = AssetBytesLoader("assets/icons/folder-prompts-open.svg.vec", packageName: _packageName);
   static const folder_interface = AssetBytesLoader("assets/icons/folder-interface.svg.vec", packageName: _packageName);
   static const folder_interface_open = AssetBytesLoader("assets/icons/folder-interface-open.svg.vec", packageName: _packageName);
   static const folder_netlify = AssetBytesLoader("assets/icons/folder-netlify.svg.vec", packageName: _packageName);
@@ -1129,6 +1138,8 @@ abstract final class MaterialIcons {
   static const folder_molecule_open = AssetBytesLoader("assets/icons/folder-molecule-open.svg.vec", packageName: _packageName);
   static const folder_organism = AssetBytesLoader("assets/icons/folder-organism.svg.vec", packageName: _packageName);
   static const folder_organism_open = AssetBytesLoader("assets/icons/folder-organism-open.svg.vec", packageName: _packageName);
+  static const folder_claude = AssetBytesLoader("assets/icons/folder-claude.svg.vec", packageName: _packageName);
+  static const folder_claude_open = AssetBytesLoader("assets/icons/folder-claude-open.svg.vec", packageName: _packageName);
   static const folder = AssetBytesLoader("assets/icons/folder.svg.vec", packageName: _packageName);
   static const folder_open = AssetBytesLoader("assets/icons/folder-open.svg.vec", packageName: _packageName);
   static const folder_root = AssetBytesLoader("assets/icons/folder-root.svg.vec", packageName: _packageName);

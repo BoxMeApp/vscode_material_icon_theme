@@ -17,6 +17,6 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "material-icon-theme": "^5.25.0"
+    "material-icon-theme": "^5.26.0"
   }
 }
